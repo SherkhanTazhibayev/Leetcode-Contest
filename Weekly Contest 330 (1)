@@ -1,0 +1,16 @@
+class Solution {
+    public int distinctIntegers(int n) {
+        HashSet<Integer> hs = new HashSet<>();
+        while(n > 0){
+            int _n = n;
+            while(_n > 0){
+                if(n % _n == 1){
+                    hs.add(_n);
+                }
+                _n -= 1;
+            }
+            n -= 1;
+        }
+        return hs.size() + 1;
+    }
+}
